@@ -1,5 +1,4 @@
 import 'package:attendancer_final_code/backend/database_helper.dart';
-import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -49,12 +48,12 @@ class DashBoardDataProvider extends ChangeNotifier {
   }
 
   void compareDate(String date) async {
-    String currentDate = Utils().getDateString(DateTime.now());
-    print("date is $date");
-    print("current date is $currentDate");
+    String currentDate = DateTime.now().day.toString();
     if (date == currentDate) {
       //isAlreadyOpened = true;
-      //print("lastDate == currentDate");
+      print("lastDate == currentDate");
+      print(date);
+      print(currentDate);
     } else {
       Database db = await DatabaseHelper.instance.database;
       await db.rawQuery('UPDATE classes SET isdone = 0');

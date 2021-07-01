@@ -1,5 +1,6 @@
 import 'package:attendancer_final_code/backend/data_provider.dart';
 import 'package:attendancer_final_code/configs/app_config.dart';
+import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:attendancer_final_code/screens/dashboard.dart';
 //import 'package:attendancer_final_code/screens/swipe_screen.dart';
 import 'package:attendancer_final_code/widgets/input_container.dart';
@@ -78,11 +79,15 @@ class AddClass extends StatelessWidget {
                           _startController.text != "" &&
                           _endController.text != "") {
                         data.addclass(
-                            StringUtils.capitalize(_classNameController.text),
+                            StringUtils.capitalize(Utils()
+                                .getStringWithoutSpace(
+                                    _classNameController.text)),
                             int.parse(_startController.text),
                             int.parse(_endController.text),
-                            _prefixController.text,
-                            _suffixController.text);
+                            Utils()
+                                .getStringWithoutSpace(_prefixController.text),
+                            Utils()
+                                .getStringWithoutSpace(_suffixController.text));
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                           return DashBoard();

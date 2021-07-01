@@ -7,4 +7,12 @@ class Utils {
         now.year.toString();
     return dateString;
   }
+
+  String getStringWithoutSpace(String text) {
+    return text.replaceAll(" ", "_");
+  }
+
+  String getStringWithSpace(String text) {
+    return text.replaceAll("_", " ");
+  }
 }

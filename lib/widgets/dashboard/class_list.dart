@@ -2,6 +2,7 @@ import 'package:attendancer_final_code/backend/class_attendance_provider.dart';
 import 'package:attendancer_final_code/backend/class_data_provider.dart';
 import 'package:attendancer_final_code/backend/data_provider.dart';
 import 'package:attendancer_final_code/configs/app_config.dart';
+import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:attendancer_final_code/screens/class_attendance.dart';
 import 'package:attendancer_final_code/screens/swipe_screen.dart';
 import 'package:attendancer_final_code/widgets/my_text.dart';
@@ -40,6 +41,7 @@ class _ClassListState extends State<ClassList> {
                 return GestureDetector(
                   onTap: () {
                     if (data.classList[index]['isdone'] == 0) {
+                      print(data.classList[index]);
                       classData.setClassData(data.classList[index]);
                       classData.buildStudentIdList();
                       classData.clearAttendance();
@@ -130,7 +132,7 @@ class ClassListTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text('${data[index]['classname']}',
+            Text('${Utils().getStringWithSpace(data[index]['classname'])}',
                 overflow: TextOverflow.fade,
                 maxLines: 1,
                 style: textStyle(24, FontWeight.normal, kFontColor)),

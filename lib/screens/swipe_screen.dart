@@ -1,5 +1,6 @@
 import 'package:attendancer_final_code/backend/class_data_provider.dart';
 import 'package:attendancer_final_code/configs/app_config.dart';
+import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:attendancer_final_code/screens/attendance_preview.dart';
 import 'package:attendancer_final_code/screens/dashboard.dart';
 import 'package:attendancer_final_code/widgets/swipe%20screen/attendance_swipe_cards.dart';
@@ -28,7 +29,7 @@ class SwipeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MyText(
-                    text: classData.className,
+                    text: Utils().getStringWithSpace(classData.className),
                     size: 48,
                     weight: FontWeight.w500),
                 Padding(

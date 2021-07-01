@@ -2,6 +2,7 @@ import 'package:attendancer_final_code/backend/class_attendance_provider.dart';
 import 'package:attendancer_final_code/backend/class_data_provider.dart';
 import 'package:attendancer_final_code/backend/dashboard_data_provider.dart';
 import 'package:attendancer_final_code/configs/app_config.dart';
+import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:attendancer_final_code/widgets/class_attendance/attendance_page_view.dart';
 import 'package:attendancer_final_code/widgets/my_text.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,8 @@ class ClassAttendance extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           MyText(
-                              text: "Class: ${attendanceData.className}",
+                              text:
+                                  "Class: ${Utils().getStringWithSpace(attendanceData.className)}",
                               size: 32.0),
                           MyText(
                               text: "Students: ${attendanceData.classStrength}",
@@ -71,7 +73,7 @@ class ClassAttendance extends StatelessWidget {
                             curve: Curves.easeInOutCirc,
                             center: MyText(
                                 text:
-                                    "${double.parse(attendanceData.classAttendanceList[attendanceData.pageIndex]['attendancepercentage']) * 100}%",
+                                    "${(double.parse(attendanceData.classAttendanceList[attendanceData.pageIndex]['attendancepercentage']) * 100).toInt()}%",
                                 size: 12.0),
                             circularStrokeCap: CircularStrokeCap.round,
                             progressColor: Colors.green,

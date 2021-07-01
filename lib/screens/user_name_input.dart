@@ -68,9 +68,8 @@ class _UserNameInputState extends State<UserNameInput> {
                                   firstNameController.text),
                               'LastName': StringUtils.capitalize(
                                   lastNameController.text),
-                              'StartDate':
-                                  Utils().getDateString(DateTime.now()),
-                              'LastDate': Utils().getDateString(DateTime.now()),
+                              'StartDate': DateTime.now().day.toString(),
+                              'LastDate': DateTime.now().day.toString(),
                               'DarkMode': 0
                             };
                             int userId = await DatabaseHelper.instance
@@ -80,10 +79,12 @@ class _UserNameInputState extends State<UserNameInput> {
                               //     .textToDisplay(firstNameController.text,
                               //         lastNameController.text);
                               data.textToDisplay(
-                                  StringUtils.capitalize(
-                                      firstNameController.text),
-                                  StringUtils.capitalize(
-                                      lastNameController.text));
+                                  StringUtils.capitalize(Utils()
+                                      .getStringWithoutSpace(
+                                          firstNameController.text)),
+                                  StringUtils.capitalize(Utils()
+                                      .getStringWithoutSpace(
+                                          lastNameController.text)));
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
                                 return DashBoard();

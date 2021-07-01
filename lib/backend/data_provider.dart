@@ -1,6 +1,7 @@
 //import 'package:attendancer_final_code/backend/models.dart';
 
 import 'package:attendancer_final_code/backend/database_helper.dart';
+import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:flutter/foundation.dart';
 
 class BackEnd extends ChangeNotifier {
@@ -10,6 +11,7 @@ class BackEnd extends ChangeNotifier {
 
   Future<void> getclass() async {
     _classList = await DatabaseHelper.instance.getAllClasses();
+
     notifyListeners();
   }
 

@@ -1,5 +1,6 @@
 import 'package:attendancer_final_code/backend/class_data_provider.dart';
 import 'package:attendancer_final_code/configs/app_config.dart';
+import 'package:attendancer_final_code/configs/utils.dart';
 import 'package:attendancer_final_code/screens/dashboard.dart';
 import 'package:attendancer_final_code/widgets/attendance_preview/attendance_list.dart';
 import 'package:attendancer_final_code/widgets/my_button.dart';
@@ -19,8 +20,10 @@ class AttendancePreview extends StatelessWidget {
         backgroundColor: kTransparentColor,
         elevation: 0,
         title: Consumer<ClassDataProvider>(
-            builder: (context, classData, child) =>
-                MyText(text: "Class: ${classData.className}", size: 36.0)),
+            builder: (context, classData, child) => MyText(
+                text:
+                    "Class: ${Utils().getStringWithSpace(classData.className)}",
+                size: 36.0)),
         centerTitle: true,
       ),
       body: SafeArea(
