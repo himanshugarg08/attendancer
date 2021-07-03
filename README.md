@@ -5,10 +5,12 @@ A new Flutter project for taking attendance in class. No need to make register o
 ## Screenshot
 <table>
 <tr>
-   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_01.png" width=216 height=408 padding = "20"/></td>
+  <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_01.png" width=216 height=408 padding = "20"/></td>
   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_02.png" width=216 height=408 padding = "20"/></td>
   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_03.png" width=216 height=408 padding = "20"/></td>
   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_04.png" width=216 height=408 padding = "20"/></td>
+</tr>
+<tr>
   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_05.png" width=216 height=408 padding = "20"/></td>
   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_06.png" width=216 height=408 padding = "20"/></td>
   <td><img src="https://github.com/himanshugarg08/attendancer/blob/main/AD_07.png" width=216 height=408 padding = "20"/></td>
